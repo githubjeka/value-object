@@ -19,6 +19,7 @@ $metre->changeTo([1,'m']) //returns new  Metre(['1', 'm']), $metre is  Metre(['1
 
 //user API via changeTo
 $metre->toMillimeter(); // new Metre(['10', 'mm']), $metre is  Metre(['1', 'centimeter'])
+$metre->toMillimeter()->add([1,'mm'])->getAmount();  //returns 11 millimeter
 ```
 
 ### a little more
