@@ -31,7 +31,7 @@ class ValueObjectTest extends \PHPUnit_Framework_TestCase
         $this->fail();
     }
 
-    public function testMe()
+    public function tesUnitQ()
     {
         $unitQ = new UnitQ([1, 'Gcal.']);
         $this->assertEquals(1, $unitQ->getQ());
@@ -40,9 +40,9 @@ class ValueObjectTest extends \PHPUnit_Framework_TestCase
 
         $newUnitQ = $unitQ->toGigaJoule();
         $this->assertEquals('GJ.', $newUnitQ->getLabel());
-        $this->assertEquals(0, $newUnitQ->compareTo(new UnitQ([4.1841,'GJ.'])));
-        $this->assertEquals(-1, $newUnitQ->compareTo(new UnitQ([4.1842,'GJ.'])));
-        $this->assertEquals(1, $newUnitQ->compareTo(new UnitQ([4.1840,'GJ.'])));
+        $this->assertEquals(0, $newUnitQ->compareTo(new UnitQ([0.239 * 1,'GJ.'])));
+        $this->assertEquals(-1, $newUnitQ->compareTo(new UnitQ([0.239 * 1 + .1,'GJ.'])));
+        $this->assertEquals(1, $newUnitQ->compareTo(new UnitQ([0.239 * 1 - .1,'GJ.'])));
 
         $this->assertEquals(0, $newUnitQ->compareTo(new UnitQ([1,'Gcal.'])));
         $this->assertEquals(-1, $newUnitQ->compareTo(new UnitQ([1.1,'Gcal.'])));
