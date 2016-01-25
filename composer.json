@@ -1,0 +1,17 @@
+{
+  "name": "githubjeka/value-object",
+  "type": "library",
+  "description": "Help to create immutable Value Objects",
+  "keywords": ["value objects", "immutable"],
+  "homepage": "https://github.com/githubjeka/value-object",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": { "ValueObject\\": "src/" }
+  },
+  "autoload-dev": {
+    "psr-4": { "ValueObjectTest\\": "tests/" }
+  },
+  "require": {
+    "php": ">=5.4.0"
+  }
+}
