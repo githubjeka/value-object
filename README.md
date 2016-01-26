@@ -10,6 +10,7 @@ and [`changeTo`](https://github.com/githubjeka/value-object/blob/master/src/Immu
 
 ```php
 // Value Object is a Metre(['1', 'centimeter'])
+$metre = new Metre(['1', 'cm']);
 $metre->compareTo([2,'cm']); // returns -1
 $metre->compareTo([.1,'m']); // returns 0
 $metre->compareTo([1,'mm']); // returns 1
