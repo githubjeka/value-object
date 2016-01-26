@@ -10,8 +10,6 @@ and [`changeTo`](https://github.com/githubjeka/value-object/blob/master/src/Immu
 
 ```php
 // Value Object is a Metre(['1', 'centimeter'])
-
-echo $metre // '1'
 $metre->compareTo([2,'cm']); // returns -1
 $metre->compareTo([.1,'m']); // returns 0
 $metre->compareTo([1,'mm']); // returns 1
@@ -20,6 +18,9 @@ $metre->changeTo([1,'m']) //returns new  Metre(['1', 'm']), $metre is  Metre(['1
 //user API via changeTo
 $metre->toMillimeter(); // new Metre(['10', 'mm']), $metre is  Metre(['1', 'centimeter'])
 $metre->toMillimeter()->add([1,'mm'])->getAmount();  //returns 11
+
+// rewrite __toString()
+echo $metre // returns '1'
 ```
 
 ### a little more
